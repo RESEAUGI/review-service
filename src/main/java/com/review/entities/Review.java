@@ -1,20 +1,28 @@
 package com.review.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import lombok.Data;
+import org.springframework.data.cassandra.core.mapping.PrimaryKey;
+import org.springframework.data.cassandra.core.mapping.Table;
 
 import java.util.Date;
+import java.util.UUID;
 
-@Entity
+@Table
 @Data
 public class Review {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long comment_id;
+    public Review(UUID review_id, String content, Date postDate, Date lastModifiedDate, long nb_likes) {
+        this.review_id = review_id;
+        this.content = content;
+        this.postDate = postDate;
+        this.lastModifiedDate = lastModifiedDate;
+        this.nb_likes = nb_likes;
+    }
+
+    @PrimaryKey
+    private UUID review_id;
     private String content;
     private Date postDate;
     private Date lastModifiedDate;
-    private Long nb_likes;
+    private long nb_likes;
+
 }
