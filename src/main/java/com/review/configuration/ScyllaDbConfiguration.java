@@ -1,4 +1,4 @@
-package configurations;
+package com.review.configuration;
 
 import org.springframework.context.annotation.Configuration;
 

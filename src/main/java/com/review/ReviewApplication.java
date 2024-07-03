@@ -1,14 +1,11 @@
 package com.review;
 
-import com.review.entities.Review;
+import com.review.model.Review;
 import com.review.repository.ReviewRepository;
-import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.pulsar.annotation.PulsarListener;
-import org.springframework.pulsar.core.PulsarTemplate;
 
 import java.util.Date;
 import java.util.UUID;

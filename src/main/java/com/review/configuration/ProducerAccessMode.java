@@ -1,4 +1,4 @@
-package com.review.enumPackage;
+package com.review.configuration;
 
 public enum ProducerAccessMode {
     Shared,

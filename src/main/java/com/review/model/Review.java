@@ -1,4 +1,4 @@
-package com.review.entities;
+package com.review.model;
 
 import lombok.Data;
 import org.springframework.data.cassandra.core.mapping.PrimaryKey;
