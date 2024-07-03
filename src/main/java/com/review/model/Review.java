@@ -10,8 +10,9 @@ import java.util.UUID;
 @Table
 @Data
 public class Review {
-    public Review(UUID review_id, String content, Date postDate, Date lastModifiedDate, long nb_likes) {
-        this.review_id = review_id;
+    public Review(UUID reviewId,long driverId, String content, Date postDate, Date lastModifiedDate, long nb_likes) {
+        this.reviewId = reviewId;
+        this.driverId=driverId;
         this.content = content;
         this.postDate = postDate;
         this.lastModifiedDate = lastModifiedDate;
@@ -19,7 +20,8 @@ public class Review {
     }
 
     @PrimaryKey
-    private UUID review_id;
+    private UUID reviewId;
+    private long driverId;
     private String content;
     private Date postDate;
     private Date lastModifiedDate;

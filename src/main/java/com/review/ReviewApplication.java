@@ -29,17 +29,17 @@ public class ReviewApplication {
 	public CommandLineRunner commandLineRunner(ReviewRepository reviewRepository){
 		return args -> {
 			reviewRepository.deleteAll();
-			Review comment1 = new Review(UUID.randomUUID(),"Hello, i am the first comment"
+			Review comment1 = new Review(UUID.randomUUID(),2,"Hello, i am the first comment"
 			,new Date(),new Date(),45);
-			Review comment2 = new Review(UUID.randomUUID(),"Hello, i am the second comment"
+			Review comment2 = new Review(UUID.randomUUID(),2,"Hello, i am the second comment"
 					,new Date(),new Date(),24);
-			Review comment3 = new Review(UUID.randomUUID(),"Hello, i am the third comment"
+			Review comment3 = new Review(UUID.randomUUID(),4,"Hello, i am the third comment"
 					,new Date(),new Date(),154);
 			reviewRepository.save(comment1);
 			reviewRepository.save(comment2);
 			reviewRepository.save(comment3);
 			reviewRepository.findAll().forEach(review->{
-				System.out.println(review.getReview_id());
+				System.out.println(review.getReviewId());
 				System.out.println(review.getContent());
 				System.out.println(review.getNb_likes());
 			});

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ReviewController {
-    private ReviewRepository reviewRepository;
+    private final ReviewRepository reviewRepository;
 
     public ReviewController(ReviewRepository reviewRepository) {
         this.reviewRepository = reviewRepository;
@@ -26,18 +26,13 @@ public class ReviewController {
         return reviewRepository.findAll();
     }
 
-    @GetMapping(path = "/reviews/{id}")
-    public Iterable <Review> driverReviewsList(){
-        return reviewRepository.f
-    }
-
     @PostMapping(path = "/reviews")
     public Review saveReview(@RequestBody Review review) {
         return reviewRepository.save(review);
     }
     @PutMapping(path = "/reviews/{id}")
     public Review updateReview(@PathVariable(name = "id") UUID review_id,@RequestBody Review review){
-        review.setReview_id(review_id);
+        review.setReviewId(review_id);
         return reviewRepository.save(review);
     }
 
